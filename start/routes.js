@@ -19,11 +19,12 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 Route.group(() => {
-    Route.post('/login', 'AuthController.login').as('auth.login').validator('Login')
+    Route.post('/login', 'AuthController.login').validator('Login')
+    Route.get('/logout', 'AuthController.logout')
 }).prefix('/auth').as('auth')
 
 Route.group(() => {
-    Route.post('/register', 'UserController.register').as('user.register')
+    Route.post('/create', 'UserController.create')
 }).prefix('/user').as('user')
 
 Route.group(() => {
