@@ -10,10 +10,6 @@ class AuthController {
       return response.status(500).send({ error: error });
     }
   }
-
-  async logout({ response, auth }) {
-    await auth.logout();
-  }
 }
 
 module.exports = AuthController;
