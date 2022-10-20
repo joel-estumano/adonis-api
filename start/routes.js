@@ -19,6 +19,14 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 Route.group(() => {
+    Route.post('/login', 'AuthController.login').as('auth.login').validator('Login')
+}).prefix('/auth').as('auth')
+
+Route.group(() => {
+    Route.post('/register', 'UserController.register').as('user.register')
+}).prefix('/user').as('user')
+
+Route.group(() => {
     Route.get('/categories', 'CategoryController.index')
     Route.post('/create', 'CategoryController.store').validator('Category')
 }).prefix('/category').as('category')
