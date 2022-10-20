@@ -29,19 +29,19 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
-## Cria modelo e respectivos, migration e controller.
+# Cria modelo e respectivos, migration e controller.
 
 adonis make:model category -m -c
 
-## Migra data base
+# Migra data base
 
 adonis migration:run
 
-## Lista rotas
+# Lista rotas
 
 adonis route:list
 
-## Cria um validador
+# Cria um validador
  
 adonis make:validator Category
 
