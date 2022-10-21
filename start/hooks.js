@@ -5,6 +5,7 @@ hooks.after.providersBooted(() => {
 
   const fullnameFn = async (data, field, message) => {
     const name = data.name;
+    if(!name) return
     const exp = name.split(" ");
     if (exp.length <= 1) {
       throw message;
