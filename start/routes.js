@@ -30,9 +30,9 @@ Route.group(() => {
 Route.group(() => {
     Route.get('/categories', 'CategoryController.index')
     Route.post('/create', 'CategoryController.store').validator('Category')
-}).prefix('/category').as('category')
+}).prefix('/category').as('category').middleware(['auth:jwt'])
 
 Route.group(() => {
     Route.get('/paginate', 'ArticleController.index').as('index')
     Route.post('/create', 'ArticleController.store').as('store')
-}).prefix('/article').as('article')
+}).prefix('/article').as('article').middleware(['auth:jwt'])

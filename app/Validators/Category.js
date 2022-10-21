@@ -6,12 +6,12 @@ class Category {
   }
 
   async fails(errorMessages) {
-    return this.ctx.response.send(errorMessages);
+    return this.ctx.response.status(400).send(errorMessages);
   }
 
   get rules() {
     return {
-      name: "required",
+      name: "required|fullname",
       description: "required",
       stack: "required",
       color: "required|min:7|max:7",
@@ -21,6 +21,7 @@ class Category {
   get messages() {
     return {
       "name.required": "name é required.",
+      "name.fullname": "name exige sobrenome.",
       "description.required": "description é required.",
       "stack.required": "stack é required.",
       "color.required": "color é required.",
